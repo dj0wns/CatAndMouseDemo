@@ -1,10 +1,5 @@
-import random
-
-WIDTH = 3
-HEIGHT = 3
-
-mouseX = random.randint(0,WIDTH);
-mouseY = random.randint(0,HEIGHT);
+mouseX = 3
+mouseY = 3
 
 catX = 0
 catY = 0
@@ -23,4 +18,3 @@ while mouseX != catX or mouseY != catY:
         catY = catY - 1
 
 print("You found the Mouse at ", mouseX, ",", mouseY)
-
