@@ -132,16 +132,16 @@ You can also update variables. Here is an example of incrementing \q{myNumber} b
 
 \begin{lstlisting}
 myNumber = 1
-print(myNumber)
+print("My number is ", myNumber)
 myNumber = myNumber + 1
-print(myNumber)
+print("My number is now ", myNumber)
 \end{lstlisting}
 
-This will print:
+Notice you can print text and variables in the same line by listing them with commas in the same print statement. This will print:
 
 \begin{lstlisting}
-1
-2
+My number is 1
+My number is now 2
 \end{lstlisting}
 
 Variables are one of the most important tools for any programmer to use.
@@ -151,15 +151,15 @@ Variables are one of the most important tools for any programmer to use.
 If we want to get input from the user, we can use the \q{input} function. The input function displays a prompt and then stores what the user inputs to a variable.
 
 \begin{lstlisting}
-myVariable = input("Please enter a word: ")
-print(myVariable)
+myWord = input("Please enter a word: ")
+print("The word you entered was ", myWord)
 \end{lstlisting}
 
 This will print(if the user inputs \q{Camel} for example): 
 
 \begin{lstlisting}
 Please enter a word: Camel
-Camel
+The word you entered was Camel
 \end{lstlisting}
 
 \subsectitle{Logical Operators}
@@ -411,8 +411,8 @@ Now that you have finished the introduction, here is a list of things you can tr
 
 \begin{itemize}
 
-\item Try to make it so the player automatically wins - think back to what causes the while loop finish
-\item Add a secret coordinate, such that if the cat goes there, it prints a message (Try to add an additional if statement inside the while loop that checks the cat's location)
+\item Try to make it so the player automatically wins. Think back to what causes the while loop finish.
+\item Add a secret coordinate, such that if the cat goes there, it prints a message. (Try to add an additional if statement inside the while loop that checks the cat's location.)
 \item What if we wanted the mouse's starting position to be random, so that even the author does not know where the mouse could be? This can be done with a python function called \q{random}!
 
 For starters, we have to add the following code to the top of our file so that we can access the \q{random} function.
