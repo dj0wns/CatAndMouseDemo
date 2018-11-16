@@ -1,30 +1,29 @@
-#Allows us to use the random functon
+#Allows us to use the random functon to get random numbers
 import random
+
+catX = 0
+catY = 0
 
 #Set the maximum x value that the mouse can be at
 MAX_X = 3
 #Set the maximum y value that the mouse can be at
 MAX_Y = 3
 
-#Set mouseX to be a random number between 0 and MAX_X
+# Set the mouse's start position to a random coordinate between (0,0) and (MAX_X,MAX_Y)
 mouseX = random.randint(0,WIDTH);
-#Set mouseY to be a random number between 0 and MAX_Y
 mouseY = random.randint(0,HEIGHT);
 
-catX = 0
-catY = 0
-
-while mouseX != catX or mouseY != catY:
+while not(catX == mouseX and catY == mouseY):
     print("The cat is currently at ", catX, ", ", catY)
     direction = input("Which direction do you want to go? ")
     
     if direction == "l":
         catX = catX - 1
-    elif direction == "r":
+    if direction == "r":
         catX = catX + 1
-    elif direction == "d":
+    if direction == "d":
         catY = catY - 1
-    elif direction == "u":
+    if direction == "u":
         catY = catY + 1
 
 print("You found the Mouse at ", mouseX, ",", mouseY)

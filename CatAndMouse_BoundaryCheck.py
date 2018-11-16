@@ -1,21 +1,20 @@
-
-#Set the minimum X value for the game
+#Set the minimum X value for the game board
 MIN_X = 0
-#Set the maximum X value for the game
+#Set the maximum X value for the game board
 MAX_X = 5
 
-#Set the maximum Y value for the game
+#Set the maximum Y value for the game board
 MIN_Y = 0
-#Set the maximum Y Value for the game
+#Set the maximum Y Value for the game board
 MAX_Y = 5
-
-mouseX = 3
-mouseY = 3
 
 catX = 0
 catY = 0
 
-while mouseX != catX or mouseY != catY:
+mouseX = 3
+mouseY = 3
+
+while not(catX == mouseX and catY == mouseY):
     print("The cat is currently at ", catX, ", ", catY)
     direction = input("Which direction do you want to go? ")
     
@@ -23,13 +22,13 @@ while mouseX != catX or mouseY != catY:
     if direction == "l" and catX > MIN_X:
         catX = catX - 1
     #Only allow the cat to move right if it is not already at the right edge
-    elif direction == "r" and catX < MAX_X:
+    if direction == "r" and catX < MAX_X:
         catX = catX + 1
     #Only allow the cat to move down if it is not already at the bottom edge
-    elif direction == "d" and catY > MIN_Y:
+    if direction == "d" and catY > MIN_Y:
         catY = catY - 1
     #Only allow the cat to move up if it is not already at the top edge
-    elif direction == "u" and catY < MAX_Y:
+    if direction == "u" and catY < MAX_Y:
         catY = catY + 1
 
 print("You found the Mouse at ", mouseX, ",", mouseY)
