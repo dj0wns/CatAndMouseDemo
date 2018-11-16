@@ -1,3 +1,11 @@
+########################################
+##------Expansion: Hot and Cold-------##
+########################################
+##---We tell the player if they are---##
+##----getting hotter or colder by-----##
+##-----calculating the distance.------##
+########################################
+
 # Allows us to use square root and power functions to calculate distance
 import math
 

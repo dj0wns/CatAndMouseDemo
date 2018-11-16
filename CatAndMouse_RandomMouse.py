@@ -1,3 +1,10 @@
+########################################
+##------Expansion: Random Mouse-------##
+########################################
+##----The mouse starts at a random----##
+##---position rather than at (3,3)----##
+########################################
+
 #Allows us to use the random functon to get random numbers
 import random
 

@@ -1,3 +1,10 @@
+########################################
+##-----Expansion: Boundary Check------##
+########################################
+##-----The cat can't move past a------##
+##-----------set boundary.------------##
+########################################
+
 #Set the minimum X value for the game board
 MIN_X = 0
 #Set the maximum X value for the game board

@@ -1,3 +1,10 @@
+########################################
+##------Basic Cat and Mouse Game------##
+########################################
+##----The player wins when the cat----##
+##---------catches the mouse.---------##
+########################################
+
 # Set the cat's start position to (0,0)
 catX = 0
 catY = 0
