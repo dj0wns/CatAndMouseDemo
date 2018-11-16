@@ -5,9 +5,9 @@ catX = 0
 catY = 0
 
 #Set the maximum x value that the mouse can be at
-MAX_X = 3
+WIDTH = 3
 #Set the maximum y value that the mouse can be at
-MAX_Y = 3
+HEIGHT = 3
 
 # Set the mouse's start position to a random coordinate between (0,0) and (MAX_X,MAX_Y)
 mouseX = random.randint(0,WIDTH);
