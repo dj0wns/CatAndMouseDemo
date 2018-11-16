@@ -78,9 +78,9 @@
 
 \subsectitle{Comments}
 
-\q{The most important thing to learn is how to write a line of code that does absolutely nothing} - Waverly
+\q{One of the most important things to learn is how to write a line of code that does absolutely nothing.} - Waverly
 
-Comments are lines of code that are ignored by the computer and allow the programmer to write notes for readers. In python a \q{\#} before text means that it work be executed.
+Comments are lines of code that are ignored by the computer and allow the programmer to write notes for readers. In python a \q{\#} before text means that it won't be executed.
 
 \begin{lstlisting}
 #This is an example of a comment
@@ -115,26 +115,26 @@ myVariable = 0
 
 The above code creates a variable, \q{myVariable}, and gives it a value of 0. 
 
-If you were to plug the variable into a print statement, it would print its value, which is zero. Notice how there are no quotes around \q{myVariable} because it is not text, but rather a variable.
+If you were to plug the variable into a print statement, it would print its value, which is zero. Notice how there are no quotes around \q{myVariable} because it is not text, but rather a variable. Variables can have almost any name you want, so try to give them names that help you remember what they store.
 
 \begin{lstlisting}
-myVariable = 0
+myVariable = "Hello, World!"
 print(myVariable)
 \end{lstlisting}
 
 This will print:
 
 \begin{lstlisting}
-0
+Hello, World!
 \end{lstlisting}
 
-You can also update variables. Here is an example of incrementing \q{myVariable} by 1.
+You can also update variables. Here is an example of incrementing \q{myNumber} by 1.
 
 \begin{lstlisting}
-myVariable = 1
-print(myVariable)
-myVariable = myVariable + 1
-print(myVariable)
+myNumber = 1
+print(myNumber)
+myNumber = myNumber + 1
+print(myNumber)
 \end{lstlisting}
 
 This will print:
@@ -148,17 +148,17 @@ Variables are one of the most important tools for any programmer to use.
 
 \subsectitle{Logical Operators}
 
-The next building blocks are the logical operators, like your typical operators (+, -, *, /) logical operators take in two values and produce a result. Logical Operators are special in that they can only return true or false. 
+The next building blocks are the logical operators, like your typical operators (+, -, *, /) logical operators take in two values and produce a result. Logical Operators are special in that they can only return True or False. 
 
-The logical operators we will cover are == (equals), >(greater than), <(less than). Here are some examples:
+The logical operators we will cover are == (equals), \> (greater than), \< (less than). Here are some examples:
 
 \begin{lstlisting}
-2 == 2 #True, 2 and 2 are equal
-3 > 1 #True, 3 is greater than 1
-4 < 7 #True, 4 is less than 7
-0 == 1 #False, 0 and 1 are not equal
-2 > 5 #False, 2 is not greater than 5
-4 < 2 #False, 4 is not less than 2
+2 == 2 # True, 2 and 2 are equal
+3 > 1 # True, 3 is greater than 1
+4 < 7 # True, 4 is less than 7
+0 == 1 # False, 0 and 1 are not equal
+2 > 5 # False, 2 is not greater than 5
+4 < 2 # False, 4 is not less than 2
 \end{lstlisting}
 
 So if you were to feed these into print statements:
@@ -180,7 +180,7 @@ False
 
 \subsectitle{If Statements}
 
-The If statement checks an expression that uses a logical operator and then does something if it is true. For examples:
+The if statement checks an expression that uses a logical operator and then does something if it is True. For examples:
 
 \begin{lstlisting}
 if 4 > 2:
@@ -195,11 +195,11 @@ This will print:
 4 is greater than 2
 \end{lstlisting}
 
-This is the case because \q{4 > 2} is true while \q{2 > 4} is false
+This is the case because \q{4 \> 2} is true while \q{2 \> 4} is false
 
 \subsectitle{While Loops}
 
-A while loop is a special kind of if statement where the contents of the loops will keep running as long as the expression is true.
+A while loop is a special kind of if statement where the contents of the loop will keep running as long as the expression is true.
 
 \begin{lstlisting}
 apples = 1
@@ -236,7 +236,7 @@ catY = 0(*\newcode{}*)
 \begin{minipage}{\textwidth}
 \subsectitle{Hide the Mouse}
 
-Next, we want to hide the mouse somewhere - and in a similar way to the cat this is done with 2 variables, \q{mouseX} and \q{mouseY}. You can choose any 2 numbers for the mouse but for this example we will use (3,3). Our code shall now look like this:
+Next, we want to hide the mouse somewhere---and in a similar way to the cat this is done with 2 variables: \q{mouseX} and \q{mouseY}. You can choose any 2 numbers for the mouse but for this example we will use (3,3). Our code should now look like this:
 
 \begin{lstlisting}
 catX = 0
