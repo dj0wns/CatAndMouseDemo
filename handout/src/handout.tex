@@ -146,11 +146,27 @@ This will print:
 
 Variables are one of the most important tools for any programmer to use.
 
+\subsectitle{Input}
+
+If we want to get input from the user, we can use the \q{input} function. The input function displays a prompt and then stores what the user inputs to a variable.
+
+\begin{lstlisting}
+myVariable = input("Please enter a word: ")
+print(myVariable)
+\end{lstlisting}
+
+This will print(if the user inputs \q{Camel} for example): 
+
+\begin{lstlisting}
+Please enter a word: Camel
+Camel
+\end{lstlisting}
+
 \subsectitle{Logical Operators}
 
 The next building blocks are the logical operators, like your typical operators (+, -, *, /) logical operators take in two values and produce a result. Logical Operators are special in that they can only return True or False. 
 
-The logical operators we will cover are == (equals), \> (greater than), \< (less than). Here are some examples:
+The logical operators we will cover are == (equals), \textgreater~(greater than), \textless~(less than). Here are some examples:
 
 \begin{lstlisting}
 2 == 2 # True, 2 and 2 are equal
@@ -195,7 +211,7 @@ This will print:
 4 is greater than 2
 \end{lstlisting}
 
-This is the case because \q{4 \> 2} is true while \q{2 \> 4} is false
+This is the case because \q{4 \textgreater~2} is true while \q{2 \textgreater~4} is false
 
 \subsectitle{While Loops}
 
