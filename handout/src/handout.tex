@@ -274,7 +274,7 @@ direction = input("Which direction do you want to go? ")(*\newcode{}*)
 
 \begin{minipage}{\textwidth}
 \subsectitle{Moving the Cat}
-So now we have a variable \q{direction} that contains the direction the player wants to move - either \q{l} for left, \q{r} for right, \q{d} for down, and \q{u} for up. For example. if the player inputs \q{l}, then we should move the cat to the left. To move the cat to the left we need to decrease \q{catX} by 1. This can be accomplished with an if statement! (Don't forget to indent for the line inside of the if statement!)
+So now we have a variable \q{direction} that contains the direction the player wants to move---either \q{l} for left, \q{r} for right, \q{d} for down, or \q{u} for up. For example. if the player inputs \q{l}, then we should move the cat to the left. To move the cat to the left we need to decrease \q{catX} by 1. This can be accomplished with an if statement. (Don't forget to indent for the line inside of the if statement!)
 
 \begin{lstlisting}
 if direction == "l":
@@ -319,7 +319,7 @@ if direction == "u":(*\newcode{}*)
 
 \begin{minipage}{\textwidth}
 \subsectitle{Create the Gameplay Loop}
-We want the game to run until the cat finds the mouse - until the location of the cat and the location of the mouse are the same. To do this we are going to use a while loop which will loop until \q{catX} is equal to\q{mouseX} and \q{catY} is equal to \q{mouseY}. In the context of a while loop, it will loop while the cat is not in the same position as the mouse. This can be done with the following line:
+We want the game to run until the cat finds the mouse---until the location of the cat and the location of the mouse are the same. To do this we are going to use a while loop which will loop until \q{catX} is equal to\q{mouseX} and \q{catY} is equal to \q{mouseY}. In the context of a while loop, it will loop while the cat is not in the same position as the mouse. This can be done with the following line:
 
 \begin{lstlisting}
 while not (catX == mouseX and catY == mouseY):
@@ -352,7 +352,7 @@ while not(catX == mouseX and catY == mouseY):(*\newcode{}*)
 \begin{minipage}{\textwidth}
 \subsectitle{Let the Player Know that they Won!}
 
-Lastly, we need some way to let the player know that they won. This can be done using a print statement after the while loop, such that it will only occur once the cat has found the mouse. (Make sure this line is NOT indented)
+Lastly, we need some way to let the player know that they won. This can be done using a print statement after the while loop, such that it will only occur once the cat has found the mouse. (Make sure this line is NOT indented.)
 
 \begin{lstlisting}
 print("You found the Mouse at ", mouseX, ",", mouseY)
