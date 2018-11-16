@@ -52,6 +52,11 @@
 }
 
 \newcommand{\sectitle}[1]{
+  \newpage
+  \begin{flushleft}{\huge#1}\end{flushleft}
+}
+
+\newcommand{\sectitlenonewpage}[1]{
   \begin{flushleft}{\huge#1}\end{flushleft}
 }
 
@@ -69,21 +74,155 @@
 
 \maketitle
 
-\sectitle{Introduction to Programming Concepts}
+\sectitlenonewpage{Introduction to Programming Concepts}
 
-\subsectitle{Variables}
+\subsectitle{Comments}
+
+\q{The most important thing to learn is how to write a line of code that does absolutely nothing} - Waverly
+
+Comments are lines of code that are ignored by the computer and allow the programmer to write notes for readers. In python a \q{\#} before text means that it work be executed.
+
+\begin{lstlisting}
+#This is an example of a comment
+\end{lstlisting}
 
 \subsectitle{Print Statements}
 
+So now on to code that actually does something. 
+
+The print statement allows the program to print something out to the user.
+
+\begin{lstlisting}
+print("This is an example of a print statement")
+\end{lstlisting}
+
+Then when this line is executed it will print:
+
+\begin{lstlisting}
+This is an example of a print statement
+\end{lstlisting}
+
+Notice how what is printed is enclosed in parentheses and quotation marks. The quotation marks signify that there is text. 
+
+\subsectitle{Variables}
+
+Variables are one of the most important tools a programmer has. A variable is a way to store and recall values. A variable can hold numbers, words, sentences and many other things. 
+
+
+\begin{lstlisting}
+myVariable = 0
+\end{lstlisting}
+
+The above code creates a variable, \q{myVariable}, and gives it a value of 0. 
+
+If you were to plug the variable into a print statement, it would print its value, which is zero. Notice how there are no quotes around \q{myVariable} because it is not text, but rather a variable.
+
+\begin{lstlisting}
+myVariable = 0
+print(myVariable)
+\end{lstlisting}
+
+This will print:
+
+\begin{lstlisting}
+0
+\end{lstlisting}
+
+You can also update variables. Here is an example of incrementing \q{myVariable} by 1.
+
+\begin{lstlisting}
+myVariable = 1
+print(myVariable)
+myVariable = myVariable + 1
+print(myVariable)
+\end{lstlisting}
+
+This will print:
+
+\begin{lstlisting}
+1
+2
+\end{lstlisting}
+
+Variables are one of the most important tools for any programmer to use.
+
 \subsectitle{Logical Operators}
+
+The next building blocks are the logical operators, like your typical operators (+, -, *, /) logical operators take in two values and produce a result. Logical Operators are special in that they can only return true or false. 
+
+The logical operators we will cover are == (equals), >(greater than), <(less than). Here are some examples:
+
+\begin{lstlisting}
+2 == 2 #True, 2 and 2 are equal
+3 > 1 #True, 3 is greater than 1
+4 < 7 #True, 4 is less than 7
+0 == 1 #False, 0 and 1 are not equal
+2 > 5 #False, 2 is not greater than 5
+4 < 2 #False, 4 is not less than 2
+\end{lstlisting}
+
+So if you were to feed these into print statements:
+
+\begin{lstlisting}
+print(2 == 2)
+print(4 < 7)
+print(2 > 5)
+\end{lstlisting}
+
+The program would print:
+
+\begin{lstlisting}
+True
+True
+False
+\end{lstlisting}
+
 
 \subsectitle{If Statements}
 
+The If statement checks an expression that uses a logical operator and then does something if it is true. For examples:
+
+\begin{lstlisting}
+if 4 > 2:
+  print("4 is greater than 2")
+if 2 > 4:
+  print("2 is greater than 4")
+\end{lstlisting}
+
+This will print:
+
+\begin{lstlisting}
+4 is greater than 2
+\end{lstlisting}
+
+This is the case because \q{4 > 2} is true while \q{2 > 4} is false
+
 \subsectitle{While Loops}
+
+A while loop is a special kind of if statement where the contents of the loops will keep running as long as the expression is true.
+
+\begin{lstlisting}
+apples = 1
+oranges = 5
+while apples < oranges:
+  print("We now have ", apples, " apples")
+  apples = apples + 1
+\end{lstlisting}
+
+This will print:
+
+\begin{lstlisting}
+We now have 1 apples
+We now have 2 apples
+We now have 3 apples
+We now have 4 apples
+\end{lstlisting}
+
+Notice how it never says there are 5 apples because when there are 5 apples, apples is no longer less than oranges.
 
 \sectitle{Let's start coding!}
 
-\begin{samepage}
+\begin{minipage}{\textwidth}
 \subsectitle{Choose a Starting Location for the Cat}
 
 First we are going to create 2 variables named \q{catX} and \q{catY} to store the location of the cat. In this example, we set the cat's initial position to (0,0).
@@ -92,9 +231,9 @@ First we are going to create 2 variables named \q{catX} and \q{catY} to store th
 catX = 0(*\newcode{}*)
 catY = 0(*\newcode{}*)
 \end{lstlisting}
-\end{samepage}
+\end{minipage}
 
-\begin{samepage}
+\begin{minipage}{\textwidth}
 \subsectitle{Hide the Mouse}
 
 Next, we want to hide the mouse somewhere - and in a similar way to the cat this is done with 2 variables, \q{mouseX} and \q{mouseY}. You can choose any 2 numbers for the mouse but for this example we will use (3,3). Our code shall now look like this:
@@ -106,10 +245,10 @@ catY = 0
 mouseX = 3(*\newcode{}*)
 mouseY = 3(*\newcode{}*)
 \end{lstlisting}
-\end{samepage}
+\end{minipage}
 
 
-\begin{samepage}
+\begin{minipage}{\textwidth}
 \subsectitle{Getting Player Input for Movement}
 
 At the beginning of the game we want to tell the player where the cat currently is and then take input to find out where to move the cat. You can print text to the screen to tell the player where the cat is with the print statement. Then you can use a variable to store their input. In this case we will name our variable \q{direction} and store the input in it.
@@ -131,9 +270,9 @@ mouseY = 3
 print("The cat is currently at ", catX, ", ", catY)} (*\newcode{}*)
 direction = input("Which direction do you want to go? ")(*\newcode{}*)
 \end{lstlisting}
-\end{samepage}
+\end{minipage}
 
-\begin{samepage}
+\begin{minipage}{\textwidth}
 \subsectitle{Moving the Cat}
 So now we have a variable \q{direction} that contains the direction the player wants to move - either \q{l} for left, \q{r} for right, \q{d} for down, and \q{u} for up. For example. if the player inputs \q{l}, then we should move the cat to the left. To move the cat to the left we need to decrease \q{catX} by 1. This can be accomplished with an if statement! (Don't forget to indent for the line inside of the if statement!)
 
@@ -176,9 +315,9 @@ if direction == "d":(*\newcode{}*)
 if direction == "u":(*\newcode{}*)
     catY = catY + 1(*\newcode{}*)
 \end{lstlisting}
-\end{samepage}
+\end{minipage}
 
-\begin{samepage}
+\begin{minipage}{\textwidth}
 \subsectitle{Create the Gameplay Loop}
 We want the game to run until the cat finds the mouse - until the location of the cat and the location of the mouse are the same. To do this we are going to use a while loop which will loop until \q{catX} is equal to\q{mouseX} and \q{catY} is equal to \q{mouseY}. In the context of a while loop, it will loop while the cat is not in the same position as the mouse. This can be done with the following line:
 
@@ -208,9 +347,9 @@ while not(catX == mouseX and catY == mouseY):(*\newcode{}*)
     if direction == "u":
         catY = catY + 1
 \end{lstlisting}
-\end{samepage}
+\end{minipage}
 
-\begin{samepage}
+\begin{minipage}{\textwidth}
 \subsectitle{Let the Player Know that they Won!}
 
 Lastly, we need some way to let the player know that they won. This can be done using a print statement after the while loop, such that it will only occur once the cat has found the mouse. (Make sure this line is NOT indented)
@@ -244,8 +383,11 @@ while not(mouseX == catX and mouseY == catY):
 print("You found the Mouse at ", mouseX, ",", mouseY)(*\newcode{}*)
 \end{lstlisting}
 
-Go ahead, give it a play! Try changing the \q{mouseX} and \q{mouseY} values and letting a friend try to find the mouse. If anything went wrong and you can't figure it out, a working version can be found at \url{https://onlinegdb.com/ByxP-6s6Q}
-\end{samepage}
+Go ahead, give it a play! Try changing the \q{mouseX} and \q{mouseY} values and letting a friend try to find the mouse. 
+
+If anything went wrong and you can't figure it out, a working version can be found at \url{https://onlinegdb.com/ByxP-6s6Q}
+
+\end{minipage}
 
 \sectitle{Challenges}
 
