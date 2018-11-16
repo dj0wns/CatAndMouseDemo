@@ -1,0 +1,234 @@
+\documentclass[12pt,oneside]{article}
+\usepackage{geometry}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{courier}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tblr,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  xleftmargin=0.4in,
+  framexleftmargin=4pt,
+  xrightmargin=0.4in,
+  framexrightmargin=4pt,
+  framexbottommargin=4pt,
+  escapeinside={(*}{*)},
+}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1.0in,bmargin=1.0in,lmargin=1.0in,rmargin=1.0in}
+
+\newcommand{\subsectitle}[1]{
+  \begin{flushleft}{\large#1}\end{flushleft}
+}
+
+\newcommand{\sectitle}[1]{
+  \begin{flushleft}{\huge#1}\end{flushleft}
+}
+
+\newcommand{\newcode}[0]{\hfill<--}
+
+\begin{document}
+
+\title{Cat and Mouse Programming Tutorial}
+\author{Waverly Roeger\\\normalsize waverlyroeger@gmail.com \and Derek Jones\\\normalsize derekjones@asu.edu}
+\date{}
+
+\maketitle
+
+\sectitle{Introduction to Programming Concepts}
+
+\subsectitle{Variables}
+
+\subsectitle{Print Statements}
+
+\subsectitle{Logical Operators}
+
+\subsectitle{If Statements}
+
+\subsectitle{While Loops}
+
+\sectitle{Let's start coding!}
+
+\begin{samepage}
+\subsectitle{Choose a Starting Location for the Cat}
+
+First we are going to create 2 variables named "catX" and "catY" to store the location of the cat. In this example, we set the cat's initial position to (0,0).
+
+\begin{lstlisting}
+catX = 0(*\newcode{}*)
+catY = 0(*\newcode{}*)
+\end{lstlisting}
+\end{samepage}
+
+\begin{samepage}
+\subsectitle{Hide the Mouse}
+
+Next, we want to hide the mouse somewhere - and in a similar way to the cat this is done with 2 variables, "mouseX" and "mouseY". You can choose any 2 numbers for the mouse but for this example we will use (3,3). Our code shall now look like this:
+
+\begin{lstlisting}
+catX = 0
+catY = 0
+
+mouseX = 3(*\newcode{}*)
+mouseY = 3(*\newcode{}*)
+\end{lstlisting}
+\end{samepage}
+
+
+\begin{samepage}
+\subsectitle{Getting Player Input for Movement}
+
+At the beginning of each gameplay loop, we want the player to know where the cat currently is. This can be accomplished with the following print statement right after the while loop. Then, after we tell them where the cat is, we have to ask them where they want to move using an input and storing it to a variable. In this case we will name the variable "direction".  (Don't forget to indent!)
+
+\begin{lstlisting}
+print("The cat is currently at ", catX, ", ", catY)
+direction = input("Which direction do you want to go? ")
+\end{lstlisting}
+
+Our code should now look like:
+
+\begin{lstlisting}
+catX = 0
+catY = 0
+
+mouseX = 3
+mouseY = 3
+
+print("The cat is currently at ", catX, ", ", catY)} (*\newcode{}*)
+direction = input("Which direction do you want to go? ")(*\newcode{}*)
+\end{lstlisting}
+\end{samepage}
+
+\begin{samepage}
+\subsectitle{Moving the Cat}
+So now we have a variable "direction" that contains the direction the player wants to move - either "l" for left, "r" for right, "d" for down, and "u" for up. For example. if the player inputs "l", then we should move the cat to the left. To move the cat to the left we need to decrease "catX" by 1. This can be accomplished with an if statement! (Don't forget to indent for the line inside of the if statement!)
+
+\begin{lstlisting}
+if direction == "l":
+  catX = catX - 1
+\end{lstlisting}
+
+Now, just do the same thing for all 4 directions, like so:
+
+\begin{lstlisting}
+if direction == "l":
+  catX = catX - 1
+if direction == "r":
+  catX = catX + 1
+if direction == "d":
+  catY = catY - 1
+if direction == "u":
+  catY = catY + 1
+\end{lstlisting}
+
+Our program should now look like:
+
+\begin{lstlisting}
+catX = 0
+catY = 0
+
+mouseX = 3
+mouseY = 3
+
+print("The cat is currently at ", catX, ", ", catY)
+direction = input("Which direction do you want to go? ")
+
+if direction == "l":(*\newcode{}*)
+        catX = catX - 1(*\newcode{}*)
+if direction == "r":(*\newcode{}*)
+        catX = catX + 1(*\newcode{}*)
+if direction == "d":(*\newcode{}*)
+        catY = catY - 1(*\newcode{}*)
+if direction == "u":(*\newcode{}*)
+        catY = catY + 1(*\newcode{}*)
+\end{lstlisting}
+\end{samepage}
+
+\begin{samepage}
+\subsectitle{Create the Gameplay Loop}
+So we want the game to run until the cat find the mouse - until the location of the cat and the location of the mouse are the same. To do this we are going to use a while loop which will loop until "catX" is equal to "mouseX" and "catY" is equal to "mouseY". This can be done with the following line:
+
+\begin{lstlisting}
+while not (catX == mouseX and catY == mouseY):
+\end{lstlisting}
+
+Our code should now look like this:
+
+\begin{lstlisting}
+catX = 0
+catY = 0
+
+mouseX = 3
+mouseY = 3
+
+while not(catX == mouseX and catY == mouseY):(*\newcode{}*)
+    print("The cat is currently at ", catX, ", ", catY)
+    direction = input("Which direction do you want to go? ")
+    
+    if direction == "l":
+        catX = catX - 1
+    elif direction == "r":
+        catX = catX + 1
+    elif direction == "d":
+        catY = catY - 1
+    elif direction == "u":
+        catY = catY + 1
+\end{lstlisting}
+\end{samepage}
+
+\begin{samepage}
+\subsectitle{Let the Player Know that they Won!}
+
+Lastly, we need some way to let the player know that they won. This can be done using a print statement after the while loop, such that it will only occur once the cat has found the mouse.
+
+\begin{lstlisting}
+print("You found the Mouse at ", mouseX, ",", mouseY)
+\end{lstlisting}
+
+And now, our finished program should look like:
+
+\begin{lstlisting}
+catX = 0
+catY = 0
+
+mouseX = 3
+mouseY = 3
+
+while not(mouseX == catX and mouseY == catY):
+    print("The cat is currently at ", catX, ", ", catY)
+    direction = input("Which direction do you want to go? ")
+    
+    if direction == "l":
+        catX = catX - 1
+    elif direction == "r":
+        catX = catX + 1
+    elif direction == "d":
+        catY = catY - 1
+    elif direction == "u":
+        catY = catY + 1
+
+print("You found the Mouse at ", mouseX, ",", mouseY)(*\newcode{}*)
+\end{lstlisting}
+
+Go ahead, give it a play! Try changing the "mouseX" and "mouseY" values and letting a friend try to find the mouse.
+\end{samepage}
+
+\end{document}
